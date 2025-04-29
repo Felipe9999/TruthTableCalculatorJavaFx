@@ -216,9 +216,16 @@ open class Operation{ //TODO: This thing explodes if b is very long and parenthe
     }
 
     open fun getTruthTableV3(): MutableList<List<*>> {
-        return if(b == null){
-            (a as Operation).getTruthTableV3Internal()
-        } else getTruthTableV3Internal()
+        if(b == null){
+            if (a is Operation) return (a as Operation).getTruthTableV3Internal()
+            else {
+                a = TinyOperation(false, a)
+                initializeVariables()
+                //incorrectlyWrittenOperation.initializeVariables()
+                return getTruthTableV3()
+                //throw Exception("Invalid operation.")
+            }
+        } else return getTruthTableV3Internal()
     }
     private fun getTruthTableV3Internal(): MutableList<List<*>> {
         val truthTable: MutableList<List<*>> = mutableListOf()

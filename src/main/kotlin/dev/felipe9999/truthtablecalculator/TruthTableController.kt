@@ -6,6 +6,7 @@ import javafx.scene.control.TextArea
 import javafx.scene.control.TextField
 import javafx.scene.control.Button
 import javafx.event.ActionEvent
+import javafx.stage.Screen
 import java.util.logging.Logger
 
 class TruthTableController {
@@ -87,12 +88,30 @@ class TruthTableController {
     @FXML
     private lateinit var btnConverseNimply: Button
 
+    @FXML
+    private lateinit var btnClearScreen: Button
+
+    @FXML
+    private lateinit var btnI: Button
+
+    @FXML
+    private lateinit var btnJ: Button
+
+    @FXML
+    private lateinit var btnK: Button
+
+    @FXML
+    private lateinit var btnL: Button
     val logger = Logger.getLogger(TruthTableController::class.java.name)
     @FXML
     fun onButtonClick(event: ActionEvent) {
         val button = event.source as Button
         if(button.text == "∨") appendToExpression("v")
         else appendToExpression(button.text)
+    }
+
+    fun clearScreen(){
+        TODO("Not implemented.")
     }
 
     @FXML
@@ -107,8 +126,9 @@ class TruthTableController {
             val operationWrapper = OperationWrapper(expression)
             val equation = operationWrapper.getEquationAsStrSafely()
             val truthTable = operationWrapper.getTruthTableAsString()
-            
-            resultArea.text = "Equation: $equation\n\nTruth Table:\n$truthTable"
+            resultArea.text = truthTable
+            boolenXpTextField.text = equation
+            //resultArea.text = "Equation: $equation\n\nTruth Table:\n$truthTable"
         } catch (e: Exception) {
             resultArea.text = "Error: ${e.message}"
             logger.warning(e.stackTraceToString())

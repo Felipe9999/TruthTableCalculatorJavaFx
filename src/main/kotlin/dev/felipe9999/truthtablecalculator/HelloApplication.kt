@@ -3,14 +3,18 @@ package dev.felipe9999.truthtablecalculator
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
+import javafx.scene.image.Image
 import javafx.stage.Stage
 
 class HelloApplication : Application() {
     override fun start(stage: Stage) {
         val fxmlLoader = FXMLLoader(HelloApplication::class.java.getResource("truth-table-view.fxml"))
-        val scene = Scene(fxmlLoader.load(), 500.0, 600.0)
+        val scene = Scene(fxmlLoader.load(), 200.0, 305.0)
         stage.title = "Boolean Algebra Truth Table Calculator"
         stage.scene = scene
+        stage.minWidth = 215.0
+        stage.minHeight = 320.0
+        stage.icons.add(Image(javaClass.getResourceAsStream("appicon.png")))
         stage.show()
     }
 }
