@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="dev.felipe9999.truthtablecalculator.TruthTableController"
+      spacing="10">
+    
+    <TextField fx:id="boolenXpTextField" 
+              promptText="Enter boolean expression"
+              prefWidth="500"/>
+    
+    <ScrollPane fx:id="scrollPane" 
+                fitToWidth="true"
+                fitToHeight="true"
+                prefHeight="100">
+        <TextArea fx:id="resultArea" 
+                 wrapText="true"
+                 editable="false"/>
+    </ScrollPane>
+    
+    <GridPane hgap="5" vgap="5">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+        </columnConstraints>
+        
+        <!-- Row 1 -->
+        <Button fx:id="btnOpenParentheses" text="(" GridPane.rowIndex="0" GridPane.columnIndex="0" onAction="#onButtonClick"/>
+        <Button fx:id="btnCloseParentheses" text=")" GridPane.rowIndex="0" GridPane.columnIndex="1" onAction="#onButtonClick"/>
+        <Button fx:id="btnNimply" text="↛" GridPane.rowIndex="0" GridPane.columnIndex="2" onAction="#onButtonClick"/>
+        <Button fx:id="btnConverseNimply" text="↚" GridPane.rowIndex="0" GridPane.columnIndex="3" onAction="#onButtonClick"/>
+        
+        <!-- Row 2 -->
+        <Button fx:id="btnG" text="G" GridPane.rowIndex="1" GridPane.columnIndex="0" onAction="#onButtonClick"/>
+        <Button fx:id="btnH" text="H" GridPane.rowIndex="1" GridPane.columnIndex="1" onAction="#onButtonClick"/>
+        <Button fx:id="btnNand" text="↑" GridPane.rowIndex="1" GridPane.columnIndex="2" onAction="#onButtonClick"/>
+        <Button fx:id="btnNor" text="↓" GridPane.rowIndex="1" GridPane.columnIndex="3" onAction="#onButtonClick"/>
+        
+        <!-- Row 3 -->
+        <Button fx:id="btnE" text="E" GridPane.rowIndex="2" GridPane.columnIndex="0" onAction="#onButtonClick"/>
+        <Button fx:id="btnF" text="F" GridPane.rowIndex="2" GridPane.columnIndex="1" onAction="#onButtonClick"/>
+        <Button fx:id="btnBiconditional" text="↔" GridPane.rowIndex="2" GridPane.columnIndex="2" onAction="#onButtonClick"/>
+        <Button fx:id="btnXor" text="⊕" GridPane.rowIndex="2" GridPane.columnIndex="3" onAction="#onButtonClick"/>
+        
+        <!-- Row 4 -->
+        <Button fx:id="btnC" text="C" GridPane.rowIndex="3" GridPane.columnIndex="0" onAction="#onButtonClick"/>
+        <Button fx:id="btnD" text="D" GridPane.rowIndex="3" GridPane.columnIndex="1" onAction="#onButtonClick"/>
+        <Button fx:id="btnImplyInvers" text="←" GridPane.rowIndex="3" GridPane.columnIndex="2" onAction="#onButtonClick"/>
+        <Button fx:id="btnImply" text="→" GridPane.rowIndex="3" GridPane.columnIndex="3" onAction="#onButtonClick"/>
+        
+        <!-- Row 5 -->
+        <Button fx:id="btnA" text="A" GridPane.rowIndex="4" GridPane.columnIndex="0" onAction="#onButtonClick"/>
+        <Button fx:id="btnB" text="B" GridPane.rowIndex="4" GridPane.columnIndex="1" onAction="#onButtonClick"/>
+        <Button fx:id="andBtn" text="∧" GridPane.rowIndex="4" GridPane.columnIndex="2" onAction="#onButtonClick"/>
+        <Button fx:id="orBtn" text="∨" GridPane.rowIndex="4" GridPane.columnIndex="3" onAction="#onButtonClick"/>
+        
+        <!-- Row 6 -->
+        <Button fx:id="btnFalse" text="0" GridPane.rowIndex="5" GridPane.columnIndex="0" onAction="#onButtonClick"/>
+        <Button fx:id="btnTrue" text="1" GridPane.rowIndex="5" GridPane.columnIndex="1" onAction="#onButtonClick"/>
+        <Button fx:id="notBtn" text="¬" GridPane.rowIndex="5" GridPane.columnIndex="2" onAction="#onButtonClick"/>
+        <Button fx:id="btnExec" text="Calculate" GridPane.rowIndex="5" GridPane.columnIndex="3" onAction="#calculate"/>
+    </GridPane>
+</VBox> 

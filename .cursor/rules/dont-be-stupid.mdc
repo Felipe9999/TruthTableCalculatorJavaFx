@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+You are working on a desktop app.
+
+All source files must be placed under src\main\kotlin\dev\felipe9999\truthtablecalculator
