@@ -1,6 +1,5 @@
-package operationmanager
+package dev.felipe9999.truthtablecalculator.operationmanager
 
-import operationmanager.Variables
 import java.util.*
 import kotlin.math.pow
 

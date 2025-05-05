@@ -1,4 +1,4 @@
-package operationmanager
+package dev.felipe9999.truthtablecalculator.operationmanager
 
 import java.util.Arrays
 

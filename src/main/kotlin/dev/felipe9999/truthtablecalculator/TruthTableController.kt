@@ -1,12 +1,12 @@
 package dev.felipe9999.truthtablecalculator
 
-import operationmanager.OperationWrapper
+import dev.felipe9999.truthtablecalculator.operationmanager.OperationWrapper
 import javafx.fxml.FXML
 import javafx.scene.control.TextArea
 import javafx.scene.control.TextField
 import javafx.scene.control.Button
 import javafx.event.ActionEvent
-import javafx.stage.Screen
+import kotlinx.coroutines.*
 import java.util.logging.Logger
 
 class TruthTableController {
@@ -111,7 +111,8 @@ class TruthTableController {
     }
 
     fun clearScreen(){
-        TODO("Not implemented.")
+        resultArea.text = ""
+        boolenXpTextField.text = ""
     }
 
     @FXML
@@ -128,7 +129,7 @@ class TruthTableController {
             val truthTable = operationWrapper.getTruthTableAsString()
             resultArea.text = truthTable
             boolenXpTextField.text = equation
-            //resultArea.text = "Equation: $equation\n\nTruth Table:\n$truthTable"
+        //resultArea.text = "Equation: $equation\n\nTruth Table:\n$truthTable"
         } catch (e: Exception) {
             resultArea.text = "Error: ${e.message}"
             logger.warning(e.stackTraceToString())

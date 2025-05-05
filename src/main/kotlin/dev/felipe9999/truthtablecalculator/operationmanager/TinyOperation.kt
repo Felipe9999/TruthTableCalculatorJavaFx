@@ -1,4 +1,4 @@
-package operationmanager
+package dev.felipe9999.truthtablecalculator.operationmanager
 
 open class TinyOperation: Operation {
     constructor(operationAsCA: CharArray, newLength: Int) : super(operationAsCA, newLength) {
