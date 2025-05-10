@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="305.0" prefWidth="195.0" spacing="10" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dev.felipe9999.truthtablecalculator.TruthTableController">
+<VBox prefHeight="305.0" prefWidth="195.0" spacing="10" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="dev.felipe9999.truthtablecalculator.TruthTableController">
     
     <TextField fx:id="boolenXpTextField" promptText="Enter boolean expression" />
     

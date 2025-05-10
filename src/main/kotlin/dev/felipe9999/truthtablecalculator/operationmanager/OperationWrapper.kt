@@ -84,6 +84,7 @@ class OperationWrapper: Operation {
                                 if (b == null) b = ""
                                 b = (b as String) + myInput[j]
                             }
+                            i++
                         }
                     }
                 }
