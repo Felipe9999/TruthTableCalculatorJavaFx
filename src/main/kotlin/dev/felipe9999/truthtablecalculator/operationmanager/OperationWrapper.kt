@@ -255,7 +255,7 @@ class OperationWrapper: Operation {
                 truthTable = listOf(aVal) + getWeirdOperationAsChar() + '|' + bTruth + listOf('|', '=', getTruthResult())
                 return truthTable
             }
-            else throw Exception("How did we get here?")
+            else throw Exception("There was an error calculating the truth table. Check your input and try again.")
         }
         else return super.getTruthSection()
     }
