@@ -214,16 +214,6 @@ class OperationWrapper: Operation {
     }
     override fun getTruthSection(): List<Any> {
         if(weirdOperation != null){
-            /*val truthA: Any
-            val truthB: Any
-            if(a is TinyOperationV2){
-                truthA = (a as TinyOperationV2).getPartialTruthSection()
-            }
-            else truthA
-            if(b is TinyOperationV2){
-                truthB = (a as TinyOperationV2).getPartialTruthSection()
-            }
-            result = (emptyList<Any>() + truthA)*/
             val truthTable: List<Any>
             if(a is Operation)(a as Operation).addVariables(variables)
             if(b is Operation)(b as Operation).addVariables(variables)
@@ -294,7 +284,7 @@ class OperationWrapper: Operation {
                 '↚'
             }
 
-            else -> throw Exception("OperationManager.Operation not found!")
+            else -> throw Exception("Operation not found!")
         }
     }
     override fun getEquationAsStrSafely(): String {
