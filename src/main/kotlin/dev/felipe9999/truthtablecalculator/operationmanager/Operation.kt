@@ -164,7 +164,8 @@ open class Operation{ //TODO: This thing explodes if b is very long and parenthe
     }
     open fun getTruthSection(): List<Any>{ //Gets a section of the truth table using the variable values we have
         val truthTable: List<Any>
-        if ((a is String) && (b is String)){ //the simplest of operations
+        if (a is Operation && b == null) return (a as Operation).getTruthSection()
+        else if ((a is String) && (b is String)){ //the simplest of operations
             val aVal = variables.getValueAt(a as String)
             val bVal = variables.getValueAt(b as String)
             truthTable = if(operation) (listOf(aVal, '∧', bVal, '=', (aVal && bVal)))
@@ -202,7 +203,7 @@ open class Operation{ //TODO: This thing explodes if b is very long and parenthe
                 listOf(aVal) + listOf('v', '|') + bTruth + listOf('|', '=', (aVal || bTruth[bTruth.size-1] as Boolean))
             return truthTable
         }
-        else throw Exception("How did we get here?")
+        else throw Exception("There was an error calculating the truth table. Check your input and try again.")
     }
 
     private fun updateInsideVars(){ //ONLY the main operation should run this method

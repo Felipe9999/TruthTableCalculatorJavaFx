@@ -74,6 +74,10 @@ open class TinyOperation: Operation {
         }
         return operationStr
     }
+
+    override fun getEquationAsStrSafely(): String {
+        return getOperationSymbol() + super.getEquationAsStrSafely()
+    }
     override fun getOperationSymbol(): Char {
         return if(operation) '¬'
         else ' '
