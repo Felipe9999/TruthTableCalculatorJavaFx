@@ -3,7 +3,7 @@ package dev.felipe9999.truthtablecalculator.operationmanager
 import java.util.*
 import kotlin.math.pow
 
-open class Operation{ //TODO: This thing explodes if b is very long and parentheses are written poorly by user
+open class Operation{ //NOTE: This thing explodes if b is very long and parentheses are written poorly by user
     protected var a: Any? = null
     protected var b: Any? = null
     protected var operation: Boolean = false //AND is true, OR is false
@@ -272,7 +272,7 @@ open class Operation{ //TODO: This thing explodes if b is very long and parenthe
         if(operation) return (aVal && bVal)
         else return (aVal || bVal)
     }
-    open fun getEquationAsStrSafely(): String {  //TODO: TESTING ONLY, REMOVE THIS FUNCTION
+    open fun getEquationAsStrSafely(): String {
         return if(b == null){
             if(a is Operation)(a as Operation).getEquationAsStr()
             else (a as String)

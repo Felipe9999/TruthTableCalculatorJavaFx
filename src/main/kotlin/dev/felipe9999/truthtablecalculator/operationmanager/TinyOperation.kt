@@ -63,7 +63,7 @@ open class TinyOperation: Operation {
         }
         else throw Exception("How did we get here?")
     }
-    override fun getEquationAsStr(): String { //TODO: TESTING ONLY, REMOVE THIS FUNCTION
+    override fun getEquationAsStr(): String {
         var operationStr = ""
         operationStr += getOperationSymbol()
         if (a is String) operationStr += a
